@@ -194,8 +194,8 @@ Ambas as plataformas permitem o uso dos seguintes **modelos de codificação de 
 Clone o repositório e gere as imagens necessárias localmente:
 
 ```bash
-git clone https://github.com/pedromujica1/GUIA_MONITORAMENTO_DADOS_FIWARE-LORAWAN.git
-cd GUIA_MONITORAMENTO_DADOS_FIWARE-LORAWAN
+git clone https://github.com/pedromujica1/GUIA_INTEGRACAO_FIWARE-LORAWAN.git
+cd GUIA_INTEGRACAO_FIWARE-LORAWAN
 ```
 
 Inicie os Contêineres:
