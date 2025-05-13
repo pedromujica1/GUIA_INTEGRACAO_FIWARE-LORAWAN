@@ -235,7 +235,7 @@ Para facilitar o tutorial apresenta o arquivo .env_template para execução da r
 
 1. Copie o modelo de configuração:
    ```bash
-   cp .env.template .env
+   cp env.template .env
    ```
 
 2. Edite o arquivo `.env` com suas credenciais:

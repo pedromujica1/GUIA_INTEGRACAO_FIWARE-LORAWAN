@@ -1,0 +1,47 @@
+# ======================================
+# CONFIGURAÇÃO BÁSICA DO DISPOSITIVO
+# ======================================
+
+# Caminho do seu serviço fiware (Exemplo: /airQuality ou /waterQuality)
+# Deve começar com "/"
+SERVICE_PATH=/airQuality
+#Nome para a entidade no Orion CB
+ENTITY_NAME="SensorCvel"
+
+# Nome único do seu dispositivo (ex: tbeam-v1)
+DEVICE_ID=""
+
+
+# ======================================
+# CREDENCIAIS LORAWAN DA TTN (OBRIGATÓRIAS)
+# ======================================
+
+# Identificador da aplicação (16 caracteres hex)
+APP_EUI=""
+
+# Identificador do dispositivo (16 caracteres hex)
+DEV_EUI=""
+
+# ID da aplicação no formato: nomeapp@ttn
+APPLICATION_ID=""
+
+# Chave de aplicação (Mesma gerarda no MQTT)
+APPLICATION_KEY=""
+
+# ======================================
+# CONFIGURAÇÃO MQTT (OBRIGATÓRIA)
+# ======================================
+
+# Endereço do servidor MQTT da TTN
+APP_SERVER_HOST=""
+
+# Usuário MQTT (mesmo do APPLICATION_ID)
+APP_SERVER_USERNAME=""
+
+# Senha MQTT (gerada na aba MQTT do TTN)
+APP_SERVER_PASSWORD=""
+
+#Provedor (manter como TTN)
+PROVIDER="TTN"
+#MODELO DE DADOS
+DATA_MODEL="application_server"
