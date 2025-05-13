@@ -607,7 +607,7 @@ Este tutorial apresentou uma configuração completa para **persistência de dad
 - 🐘 *PostgreSQL* como banco de dados relacional
 - 📊 *Grafana* para visualização de dados históricos
 
-Mas isso é só o começo! O ecossistema FIWARE é **flexível, open-source e extensível**, permitindo integração com várias outras tecnologias e bancos de dados, como:
+O ecossistema FIWARE é **flexível, open-source e extensível**, permitindo integração com várias outras tecnologias e bancos de dados, como:
 
 - **MySQL**
 - **MongoDB**
@@ -642,8 +642,10 @@ Se você tiver dúvidas, sugestões ou encontrar erros:
 - 🤝 Participe da comunidade FIWARE: Slack, Stack Overflow e fóruns abertos
 
 FIWARE é um projeto **aberto e colaborativo** — todos são bem-vindos para contribuir!
+Este projeto foi desenvolvido como Iniciação científica para o Curso de Bacharelado em Ciência da Computação na Universidade Estadual do Oeste do Paraná. Também está em manutenção com atualizações de novos componentes que serão publicados em breve.
 
 ---
 
-🚀 **Bons testes e boas medições com seus sensores IoT!** 🌍🌱
+### Licença
 
+[License]()
