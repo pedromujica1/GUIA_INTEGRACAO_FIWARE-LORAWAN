@@ -1,0 +1,93 @@
+version: "3.7"
+
+services:
+  mongodb:
+    extends:
+      file: docker-compose-dev.yml
+      service: mongodb
+    volumes:
+      - mongo_data_lora:/data/db
+  
+  orion:
+    extends:
+      file: docker-compose-dev.yml
+      service: orion
+    command: -dbhost mongodb -port 1026 -logLevel INFO
+
+  iotagent-lora:
+    depends_on:
+      - orion
+      - mongodb
+    entrypoint: bin/iotagent-lora docker/config-docker.js
+    hostname: iotagent-lora
+    image: ioeari/iotagent-lora
+    ports:
+      - "4041:4041"
+    networks:
+      - LoRaWAN
+
+  postgres-db:
+    image: postgres:latest
+    hostname: postgres-db
+    container_name: db-postgres
+    expose:
+        - "5432"
+    ports:
+        - "5432:5432"
+    networks:
+        - LoRaWAN
+    environment:
+        - "POSTGRES_PASSWORD=password"
+        - "POSTGRES_USER=postgres"
+        - "POSTGRES_DB=postgres"
+    volumes:
+        - postgres_data:/var/lib/postgresql/data
+  
+  cygnus:
+    image: fiware/cygnus-ngsi:latest
+    hostname: cygnus
+    container_name: fiware-cygnus
+    networks:
+        - LoRaWAN
+    depends_on:
+        - postgres-db
+    expose:
+        - "5080"
+    ports:
+        - "5055:5055"
+        - "5080:5080"
+    environment:
+        - "CYGNUS_POSTGRESQL_HOST=postgres-db"
+        - "CYGNUS_POSTGRESQL_PORT=5432"
+        - "CYGNUS_POSTGRESQL_USER=postgres"
+        - "CYGNUS_POSTGRESQL_PASS=password"
+        - "CYGNUS_POSTGRESQL_ENABLE_CACHE=true"
+        - "CYGNUS_POSTGRESQL_SERVICE_PORT=5055"
+        - "CYGNUS_LOG_LEVEL=DEBUG"
+        - "CYGNUS_API_PORT=5080"
+        - "CYGNUS_SERVICE_PORT=5055"
+    
+
+  
+  grafana:
+    image: grafana/grafana
+    depends_on:
+        - postgres-db
+    ports:
+        - '3003:3000'
+    environment:
+        - GF_INSTALL_PLUGINS=orchestracities-map-panel,grafana-clock-panel,grafana-worldmap-panel
+    networks:
+      - LoRaWAN
+    volumes:
+      - grafana_data:/var/lib/grafana
+    
+volumes:
+  mongo_data_lora: 
+  lora_device_data:
+  postgres_data:
+  grafana_data: 
+
+
+networks:
+  LoRaWAN: {}
