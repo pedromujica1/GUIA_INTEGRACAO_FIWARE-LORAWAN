@@ -200,7 +200,7 @@ cd GUIA_INTEGRACAO_FIWARE-LORAWAN
 
 Inicie os Contêineres:
 ```bash
-docker-compose -f docker/docker-compose.yml up
+docker compose -f docker/docker-compose.yml up
 ```
 Abre outra janela no terminal e verifique se os containêrs estão inicializados:
 ```bash
