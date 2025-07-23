@@ -50,7 +50,7 @@ curl localhost:1026/v2/entities/ \
   -H 'Accept: application/json' \
   -H 'fiware-service: openiot' \
   -H 'fiware-servicepath: /airQuality' \
-  | python -mjson.tool
+  | python3 -mjson.tool
 ```
 ### ❌ Deletar uma entidade do Context Broker
 
@@ -60,8 +60,8 @@ curl -X DELETE \
   'http://localhost:1026/v2/entities/<ID_ENTIDADE>' \
   -s -S \
   -H 'Accept: application/json' \
-  -H 'fiware-service: smartgondor' \
-  -H 'fiware-servicepath: /gardens'
+  -H 'fiware-service: openiot' \
+  -H 'fiware-servicepath: /airQuality'
 ```
 
 ### 🕵️ Verificar o último dado recebido por uma entidade
