@@ -48,8 +48,8 @@ Mostra todos os dispositivos e sensores registrados no Orion Context Broker para
 curl localhost:1026/v2/entities/ \
   -s -S \
   -H 'Accept: application/json' \
-  -H 'fiware-service: smartgondor' \
-  -H 'fiware-servicepath: /gardens' \
+  -H 'fiware-service: openiot' \
+  -H 'fiware-servicepath: /airQuality' \
   | python -mjson.tool
 ```
 ### ❌ Deletar uma entidade do Context Broker
