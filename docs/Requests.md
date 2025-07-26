@@ -81,6 +81,13 @@ curl localhost:1026/v2/entities/SensorQualidadeAr_Londrina \
   -H 'fiware-service: openiot' \
   -H 'fiware-servicepath: /airQuality' \
   | python3 -mjson.tool
+
+
+curl localhost:1026/v2/entities/SensorCvel \
+  -s -S \
+  -H 'Accept: application/json' \
+  -H 'fiware-service: openiot' \
+  -H 'fiware-servicepath: /airQuality' \
 ```
 ## 📡 Consultas no IoT Agent
 
