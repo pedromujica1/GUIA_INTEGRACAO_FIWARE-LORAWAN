@@ -51,6 +51,14 @@ curl localhost:1026/v2/entities/ \
   -H 'fiware-service: openiot' \
   -H 'fiware-servicepath: /airQuality' \
   | python3 -mjson.tool
+
+
+curl localhost:1026/v2/entities/SensorCvel \
+  -s -S \
+  -H 'Accept: application/json' \
+  -H 'fiware-service: openiot' \
+  -H 'fiware-servicepath: /airQuality' \
+  | python3 -mjson.tool
 ```
 ### ❌ Deletar uma entidade do Context Broker
 
