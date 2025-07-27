@@ -98,6 +98,9 @@ curl --location 'http://localhost:4041/iot/devices' \
   --header 'fiware-service: openiot' \
   --header 'fiware-servicepath: /'
 ```
+```bash
+curl -X DELETE 'http://localhost:4041/iot/devices/env2'   --header 'fiware-service: openiot'   --header 'fiware-servicepath: /airQuality'
+```
 
 ## 🧹 Recuperação do Orion Context Broker
 Se o Orion Context Broker não estiver iniciando corretamente, pode haver conflitos de rede ou containers corrompidos. Tente os seguintes comandos para "resetar" o ambiente Docker:
