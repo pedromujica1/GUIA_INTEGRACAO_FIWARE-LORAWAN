@@ -151,3 +151,15 @@ WHERE
     attrtype = 'Number'        
     AND attrvalue::numeric = 0;
 ```
+### Verificar CO_Corrigido
+
+```SQL
+
+SELECT recvtime, attrvalue
+FROM openiot.airquality_sensorcvel_loradevice
+WHERE attrname = 'CO_Corrigido'
+ORDER BY recvtime DESC
+LIMIT 10;
+
+```
+
